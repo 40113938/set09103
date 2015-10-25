@@ -8,7 +8,8 @@ def welcome():
     name = request.form['name']
     return "Hello %s" % name
     print request.form
-    password=requrest.form['password']
+    password=request.form['password']
+
   else:
     page='''
     <html><body>
@@ -18,7 +19,7 @@ def welcome():
         <input type="text" name="name" id="name"/>
         <label for="password">Password::</label>
         <input type="password" name="password" id="password"/>
-        <input type="submit" name="submit" id="submit"/>        
+        <input type="submit" name="submit" id="submit"/>
       </form>
       <h3> Richard Cook - 40113938 </h3>
       </body><html>'''
