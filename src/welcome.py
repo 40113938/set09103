@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, g
 app = Flask(__name__)
 
 @app.route("/welcome/", methods=['POST', 'GET'])
