@@ -5,20 +5,15 @@ app = Flask(__name__)
 def welcome():
   if request.method == 'POST':
     print request.form
-    name = request.form['name']
-    return "Hello %s" % name
-    print request.form
-    password=request.form['password']
-
+    search = request.form['search']
+    return "You searched for %s" % search
   else:
     page='''
     <html><body>
-      <form action = "" method="post" name="form">
+      <form action = "" method="post" search="form">
         <h1> Music Database </h1>
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name"/>
-        <label for="password">Password::</label>
-        <input type="password" name="password" id="password"/>
+        <label for="search">Search:</label>
+        <input type="text" name="search" id="search"/>
         <input type="submit" name="submit" id="submit"/>
       </form>
       <h3> Richard Cook - 40113938 </h3>
