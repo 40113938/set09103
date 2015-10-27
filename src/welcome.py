@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, g
+from flask import Flask, request, render_template, g, url_for
 import sqlite3
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def welcome():
     page='''
     <html><body>
       <form action = "" method="post" search="form">
-        <h1> Music Database </h1>
+        <h1> Coursework database - Add in a menu here </h1>
         <label for="search">Search:</label>
         <input type="text" name="search" id="search"/>
         <input type="submit" name="submit" id="submit"/>
