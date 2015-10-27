@@ -49,5 +49,15 @@ def album():
   artist=row[1], yor=row[2], length=row[3]) for row in cur.fetchall()]
   return render_template('album.html', band=band, album=album)
 
+@app.route("/search/", methods=['POST', 'GET'])
+def search():
+  search = request.form['search']
+  select = request.form['select']
+  if select == 'artist':
+    return redirect(url_for('artist', q=search))
+  if select == 'album':
+    return redirect(url_for('album', q=search))
+  return render_template('search.html')
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

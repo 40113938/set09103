@@ -1,0 +1,15 @@
+<!doctype html>
+<body>
+  <h1> Search </h1>
+  <div id="search">
+    <form action="/search" method="post" name="form">
+      <label for="name">Search:</label>
+      <input type="text" name="search"/>
+      <input type="submit" name="submit"/>
+      <input type="radio" name="select" value="artist">
+      <input type="radio" name="select" value="album">
+    </form>
+  </div>
+{% block content %{ {% endblock %}
+</body>
+</html>
