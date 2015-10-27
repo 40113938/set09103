@@ -3,11 +3,12 @@
 <ul>
   <li><a href="localhost:5000/welcome">Welcome</a></li>
   <li><a href="localhost:5000/artist">Artist </a></li>
+  <li><a href="localhost:5000/album">Album</a></li>
 </ul>
 
 {% for artist in artist%}
 <p>
-<strong>name:</strong> {{ artist.name }}<br>
+<strong>Name:</strong> {{ artist.name }}<br>
 <strong>Year of Creation:</strong> {{ artist.yoc }}<br>
 <strong>Nationality:</strong> {{ artist.nationality }}<br>
 <strong>Genre:</strong> {{ artist.genre }}<br>
