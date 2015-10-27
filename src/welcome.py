@@ -23,7 +23,7 @@ def welcome():
       <h3> Richard Cook - 40113938 </h3>
       </body><html>'''
 
-    return page
+    return render_template('welcome.html')
 
 @app.route("/artist/", methods=['POST', 'GET'])
 def artist():
