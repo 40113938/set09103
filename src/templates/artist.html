@@ -37,9 +37,9 @@ a:hover, a:active{
   <li><a href=" {{ url_for('search') }}">Search</a><li>
 </ul>
 
-  <form action="../search/%s" % name method="post" name="form">
+  <form action="../search/?key=" % name method="get" name="form">
     <label for="search"Search:</label>
-    <input type="text" name="search" id="search"/>
+    <input type="text" name="key" id="search"/>
     <input type="submit" name="submit" id="submit"/>
   </form>
 
