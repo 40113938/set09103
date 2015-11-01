@@ -56,8 +56,7 @@ def search():
   if searchm  == '':
     cur = g.db.execute ("SELECT * FROM artist")
   else:
-    cur = g.db.execute ("SELECT * FROM artist WHERE name like ?", ("%" +
-    searchm  + "%", ))
+    cur = g.db.execute ("SELECT * FROM artist WHERE name like ?", ("%" +  searchm  + "%", ))
   name = [dict(name=row[0]) for row in cur.fetchall()]
   return render_template('search.html', searchm=searchm, name=name)
 
