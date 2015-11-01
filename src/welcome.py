@@ -51,13 +51,15 @@ def album():
 
 @app.route("/search/", methods=['POST', 'GET'])
 def search():
-  search = request.form['search']
-  select = request.form['select']
-  if select == 'artist':
-    return redirect(url_for('artist', q=search))
-  if select == 'album':
-    return redirect(url_for('album', q=search))
-  return render_template('search.html')
+  check = request.args.get('key', '')
+  g.db = get_db()
+  if check == '':
+    cur = g.db.execute ("SELECT * FROM artist")
+  else:
+    cur = g.db.execute ("SELECT * FROM artist WHERE name like ?", ("%" + check
+    + "%", ))
+  name = [dict(name=row[0]) for row in cur.fetchall()]
+  return render_template('artist.html')
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

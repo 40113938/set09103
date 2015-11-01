@@ -1,15 +1,19 @@
 <!doctype html>
 <body>
-  <h1> Search </h1>
-  <div id="search">
-    <form action="/search" method="post" name="form">
-      <label for="name">Search:</label>
-      <input type="text" name="search"/>
-      <input type="submit" name="submit"/>
-      <input type="radio" name="select" value="artist">
-      <input type="radio" name="select" value="album">
+<head>
+<style>
+</style>
+  
+    <form action="../search/?key="  method="get" name="form">
+      <label for="search"Search:</label>
+      <input type="text" name="key" id="search"/>
+      <input type="submit" name="submit" id="submit"/>
     </form>
-  </div>
-{% block content %{ {% endblock %}
+
+{% for artist in artist%}
+<p>
+{{ artist.name }}<br>
+</p>
+{% endfor %}
 </body>
 </html>
