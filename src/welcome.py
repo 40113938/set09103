@@ -12,17 +12,6 @@ def welcome():
     search = request.form['search']
     return "You searched for %s" % search
   else:
-    page='''
-    <html><body>
-      <form action = "" method="post" search="form">
-        <h1> Coursework database - Add in a menu here </h1>
-        <label for="search">Search:</label>
-        <input type="text" name="search" id="search"/>
-        <input type="submit" name="submit" id="submit"/>
-      </form>
-      <h3> Richard Cook - 40113938 </h3>
-      </body><html>'''
-
     return render_template('welcome.html')
 
 @app.route("/artist/", methods=['POST', 'GET'])
@@ -57,7 +46,7 @@ def search():
     cur = g.db.execute ("SELECT * FROM artist")
   else:
     cur = g.db.execute ("SELECT * FROM artist WHERE name like ?", ("%" +  searchm  + "%", ))
-  name = [dict(name=row[0]) for row in cur.fetchall()]
+  name = [dict(name=row[0], yoc=row[1], nationality=row[2], genre=row[3])for row in cur.fetchall()]
   return render_template('search.html', searchm=searchm, name=name)
 
 if __name__ == "__main__":

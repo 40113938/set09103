@@ -37,11 +37,9 @@ a:hover, a:active{
   <li><a href=" {{ url_for('search') }}">Search</a><li>
 </ul>
 
-<form action = "" method="post" search="form">
+<form action = "../search/?key=" method="get" name="form">
   <h1> Music Database</h1>
-  <label for="search">Search:</label>
-  <input type="text" name="search" id="search"/>
-  <input type="submit" name="submit" id="submit"/>
+  
 </form>
 <h3> Richard Cook - 40113938 This is being pulled from the html </h3>
 </body>
